@@ -1,13 +1,16 @@
 # Code Book
 
+The tidy data created is the result of merging the training and test sets. 
+The mean and standard deviation were then extracted for each measurement variable.
+
 This code book summarizes the resulting data fields in `tidy.txt`.
 
 ## Identifiers
 
-* `subject` - The ID of the test subject
+* `subject` - The ID (1-30) of the test subject
 * `activity` - The type of activity performed when the corresponding measurements were taken
 
-## Measurements
+## Variables
 
 * `tBodyAccMeanX`
 * `tBodyAccMeanY`
@@ -89,7 +92,7 @@ This code book summarizes the resulting data fields in `tidy.txt`.
 * `fBodyBodyGyroJerkMagStd`
 * `fBodyBodyGyroJerkMagMeanFreq`
 
-## Activity Labels
+## Activity Observation
 
 * `WALKING` (value `1`): subject was walking during the test
 * `WALKING_UPSTAIRS` (value `2`): subject was walking up a staircase during the test
