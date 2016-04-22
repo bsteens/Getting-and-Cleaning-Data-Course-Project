@@ -2,6 +2,9 @@
 
 The tidy data created is the result of merging the training and test sets. 
 The mean and standard deviation were then extracted for each measurement variable.
+Descriptive actvity names are used to name each activity in the data set.
+Descriptive variable names are used to label the data set.
+An independent tidy data set with the average of each variable for each activity and each subject is created.
 
 This code book summarizes the resulting data fields in `tidy.txt`.
 
@@ -12,85 +15,12 @@ This code book summarizes the resulting data fields in `tidy.txt`.
 
 ## Variables
 
-* `tBodyAccMeanX`
-* `tBodyAccMeanY`
-* `tBodyAccMeanZ`
-* `tBodyAccStdX`
-* `tBodyAccStdY`
-* `tBodyAccStdZ`
-* `tGravityAccMeanX`
-* `tGravityAccMeanY`
-* `tGravityAccMeanZ`
-* `tGravityAccStdX`
-* `tGravityAccStdY`
-* `tGravityAccStdZ`
-* `tBodyAccJerkMeanX`
-* `tBodyAccJerkMeanY`
-* `tBodyAccJerkMeanZ`
-* `tBodyAccJerkStdX`
-* `tBodyAccJerkStdY`
-* `tBodyAccJerkStdZ`
-* `tBodyGyroMeanX`
-* `tBodyGyroMeanY`
-* `tBodyGyroMeanZ`
-* `tBodyGyroStdX`
-* `tBodyGyroStdY`
-* `tBodyGyroStdZ`
-* `tBodyGyroJerkMeanX`
-* `tBodyGyroJerkMeanY`
-* `tBodyGyroJerkMeanZ`
-* `tBodyGyroJerkStdX`
-* `tBodyGyroJerkStdY`
-* `tBodyGyroJerkStdZ`
-* `tBodyAccMagMean`
-* `tBodyAccMagStd`
-* `tGravityAccMagMean`
-* `tGravityAccMagStd`
-* `tBodyAccJerkMagMean`
-* `tBodyAccJerkMagStd`
-* `tBodyGyroMagMean`
-* `tBodyGyroMagStd`
-* `tBodyGyroJerkMagMean`
-* `tBodyGyroJerkMagStd`
-* `fBodyAccMeanX`
-* `fBodyAccMeanY`
-* `fBodyAccMeanZ`
-* `fBodyAccStdX`
-* `fBodyAccStdY`
-* `fBodyAccStdZ`
-* `fBodyAccMeanFreqX`
-* `fBodyAccMeanFreqY`
-* `fBodyAccMeanFreqZ`
-* `fBodyAccJerkMeanX`
-* `fBodyAccJerkMeanY`
-* `fBodyAccJerkMeanZ`
-* `fBodyAccJerkStdX`
-* `fBodyAccJerkStdY`
-* `fBodyAccJerkStdZ`
-* `fBodyAccJerkMeanFreqX`
-* `fBodyAccJerkMeanFreqY`
-* `fBodyAccJerkMeanFreqZ`
-* `fBodyGyroMeanX`
-* `fBodyGyroMeanY`
-* `fBodyGyroMeanZ`
-* `fBodyGyroStdX`
-* `fBodyGyroStdY`
-* `fBodyGyroStdZ`
-* `fBodyGyroMeanFreqX`
-* `fBodyGyroMeanFreqY`
-* `fBodyGyroMeanFreqZ`
-* `fBodyAccMagMean`
-* `fBodyAccMagStd`
-* `fBodyAccMagMeanFreq`
-* `fBodyBodyAccJerkMagMean`
-* `fBodyBodyAccJerkMagStd`
-* `fBodyBodyAccJerkMagMeanFreq`
-* `fBodyBodyGyroMagMean`
-* `fBodyBodyGyroMagStd`
-* `fBodyBodyGyroMagMeanFreq`
-* `fBodyBodyGyroJerkMagMean`
-* `fBodyBodyGyroJerkMagStd`
-* `fBodyBodyGyroJerkMagMeanFreq`
+* `x_train`, `y_train`, `x_test`, `y_test`, `subject_train` and `subject_test` contain the data from the downloaded files.
+* `x_data`, `y_data` and `subject_data` merge the previous datasets to further analysis.
+* `features` contains the correct names for the `x_data` dataset, which are applied to the column names stored in `mean_and_std_features`, a numeric vector used to extract the desired data.
+* A similar approach is taken with activity names through the `activities` variable.
+* `all_data` merges `x_data`, `y_data` and `subject_data` in a big dataset.
+* Finally, `averages_data` contains the relevant averages which will be later stored in a `.txt` file. `ddply()` from the plyr package is used to apply `colMeans()` and ease the development.
 
 ## Activity Observation
 
